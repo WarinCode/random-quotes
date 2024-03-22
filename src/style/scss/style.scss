@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+body {
+  background-image: url("https://d3d0lqu00lnqvz.cloudfront.net/media/media/be7a97e5-19d2-4df5-b348-a549dd5b3fe7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  color: black;
+  background: transparent;
+  box-shadow: 0 0 25px black;
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  min-width: 500px;
+  max-width: 620px;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    height: max-content;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    flex-direction: column;
+    word-wrap: break-word;
+    height: fit-content;
+    margin: auto;
+    padding: 50px;
+    border-radius: 25px;
+    blockquote {
+      & :where(p, q.quotes) {
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+    q.quotes {
+      font-size: 22px;
+    }
+    p {
+      font-size: 18px;
+    }
+    h4.author#active {
+      &::before {
+        content: "- ";
+      }
+      cursor: default;
+      margin-top: 1.3rem;
+      color: rgba(0, 0, 0, 0.884);
+      text-align: end;
+    }
+  }
+
+  button {
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: capitalize;
+    background-color: #000;
+    color: #fff;
+    border-radius: 6px;
+    width: 75%;
+    height: 54px;
+    transition: background 200ms ease-in, transform 400ms ease-in,
+      box-shadow 180ms, color 200ms ease-in;
+    &:hover {
+      color: #000;
+      background: linear-gradient(
+        to right,
+        rgba(11, 243, 30, 0.863),
+        rgb(56, 248, 81),
+        #75f5a6
+      );
+      box-shadow: 0 10px 23px rgb(17, 17, 17);
+    }
+    &:active {
+      transform: translateY(20px);
+    }
+  }
+}
